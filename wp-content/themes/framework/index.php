@@ -29,9 +29,9 @@
             </div>
         </div>
     </section>
-    <section class="slogan py-5" style="--backgroundSlogan: <?php echo get_field('background_slogan'); ?>; --color-slogan:<?php echo get_field('cor_slogan'); ?>;">
+    <section class="slogan py-4" style="--backgroundSlogan: <?php echo get_field('background_slogan'); ?>; --color-slogan:<?php echo get_field('cor_slogan'); ?>;">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-12 col-md-3 text-center">
                     <img src="<?php echo get_field('sobre_logo')['url']; ?>" alt="<?php echo get_field('sobre_logo')['alt']; ?>">
                 </div>
@@ -86,9 +86,9 @@
     <?php
     if (get_field('link_tour')) {
     ?>
-        <section id="tour" class="py-5" style="--bg-image: url(<?php echo get_field('background_image_tour')['url']; ?>); --bg-color: <?php echo get_field('cor_bg_tour'); ?>; --bColor: <?php echo get_field('cor_borda'); ?>;">
+        <section id="tour" style="--bg-image: url(<?php echo get_field('background_image_tour')['url']; ?>); --bg-color: <?php echo get_field('cor_bg_tour'); ?>; --bColor: <?php echo get_field('cor_borda'); ?>;">
             <div class="container">
-                <div class="row text-center justify-content-center">
+                <div class="row text-center justify-content-center py-5">
                     <div>
                         <div class="content mb-3">
                             <?php echo get_field('conteudo_tour'); ?>

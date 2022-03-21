@@ -43,7 +43,7 @@
 
 				<a class="navbar-brand logo" href="<?php echo esc_url(home_url('/')); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
 					<?php if (get_field('logo_header', 'option')) { ?>
-						<img class="lazy-load img-fluid" src="<?php echo get_field('logo_header', 'option')['url']; ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>">
+						<img class="lazy-load" src="<?php echo get_field('logo_header', 'option')['url']; ?>" alt="<?php bloginfo('name'); ?>" title="<?php bloginfo('name'); ?>">
 					<?php } ?>
 				</a>
 				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav">

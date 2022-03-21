@@ -26,6 +26,12 @@
 			</div>
 		</div>
 </footer>
+<script>
+	$(document).ready(function($){
+    $('.mask-cpf').mask('000.000.000-00', { reverse: false });
+    $('.mask-tel').mask('(00) 9 0000-0000', { reverse: false });
+});
+</script>
 <!-- #footer -->
 <?php wp_footer(); ?>
 </body>
