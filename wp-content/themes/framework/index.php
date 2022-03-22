@@ -93,7 +93,7 @@
                         <div class="content mb-3">
                             <?php echo get_field('conteudo_tour'); ?>
                         </div>
-                        <button class="mb-4" data-toggle="modal" data-target="#mytour">Faça um tour Virtual</button>
+                        <button class="mb-4" data-toggle="modal" data-target="#mytour" style="color: <?php echo get_field('buttom-color'); ?>; background: <?php echo get_field('buttom-bg'); ?>;">Faça um tour Virtual</button>
                         <figure>
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="78" viewBox="0 0 128 78">
                                 <defs>
@@ -133,7 +133,7 @@
                     </div>
                     <?php if (get_field('arquivo_para_download')) { ?>
                         <p class="text-center"><b><?php echo get_field('instrucoes'); ?></b></p>
-                        <a href="<?php echo get_field('arquivo_para_download')['url']; ?>" class="btn" download="download">Baixar</a>
+                        <a href="<?php echo get_field('arquivo_para_download')['url']; ?>" class="btn" style="background: <?php echo get_field('baixar-bg');?>; color:<?php echo get_field('baixar-color');?>" download="download">Baixar</a>
                     <?php } ?>
                 </div>
             </div>
@@ -142,7 +142,7 @@
     <section id="localizacao" class="py-5">
         <div class="container">
             <div class="row justify-content-center pb-5">
-                <h2 class="mb-0"><?php echo get_field('Mapa_titulo'); ?></h2>
+                <h2 class="mb-0" style="color: <?php echo get_field('map_titulo_cor');?>"><?php echo get_field('Mapa_titulo'); ?></h2>
             </div>
         </div>
         <div id="maps" class="acf-map" data-zoom="16">
