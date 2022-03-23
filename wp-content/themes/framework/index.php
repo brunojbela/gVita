@@ -69,7 +69,7 @@
                                     }
                                 }
                         ?>
-                                <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="<?php echo $style; ?> --bg-image: <?php echo $bgImage; ?>; --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>; --content: <?php echo get_sub_field('legenda'); ?> ">
+                                <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="<?php echo $style; ?> --bg-image: <?php echo $bgImage; ?>; --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>; --content: '<?php echo get_sub_field('legenda'); ?>' ">
                                     <div>
                                         <?php
                                         if (get_sub_field('titulo')) {
