@@ -62,14 +62,14 @@
                                 $style = "";
                                 if(!get_sub_field('titulo') && !get_sub_field('conteudo')){
                                     $bgImage = "linear-gradient(-90deg, var(--bg-color), transparent), url('". get_sub_field('background_Image') ."')";
-                                    $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: right center;";
+                                    $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: right center; text-align: right; --content: ". get_sub_field('legenda');
                                     if($i == 2){
                                         $bgImage = "linear-gradient(90deg, var(--bg-color), transparent), url('". get_sub_field('background_Image') ."')";
-                                        $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: left center;";
+                                        $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: left center; --content: ". get_sub_field('legenda');
                                     }
                                 }
                         ?>
-                                <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="<?php echo $style; ?> --bg-image: <?php echo $bgImage; ?>; --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>; --content: '<?php echo get_sub_field('legenda'); ?>' ">
+                                <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="<?php echo $style; ?> --bg-image: <?php echo $bgImage; ?>; --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>;  ">
                                     <div>
                                         <?php
                                         if (get_sub_field('titulo')) {
