@@ -65,7 +65,7 @@
                                     $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: right center; text-align: right; --content: ". get_sub_field('legenda');
                                     if($i == 2){
                                         $bgImage = "linear-gradient(90deg, var(--bg-color), transparent), url('". get_sub_field('background_Image') ."')";
-                                        $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: left center; --content: ". get_sub_field('legenda');
+                                        $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: left center; --content: '". get_sub_field('legenda')."';";
                                     }
                                 }
                         ?>
