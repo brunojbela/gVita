@@ -58,7 +58,7 @@
                             while (have_rows('coluna')) {
                                 the_row();
                                 $class = $count == 2 ? "col-md-6" : '';
-                                $bgImage = get_sub_field('background_Image');
+                                $bgImage = 'url('.get_sub_field('background_Image').')';
                                 $style = "";
                                 if(!get_sub_field('titulo') && !get_sub_field('conteudo')){
                                     $bgImage = "linear-gradient(-90deg, var(--bg-color), transparent), url('". get_sub_field('background_Image') ."')";
@@ -70,7 +70,7 @@
                                 }
                         ?>
                                 <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="<?php echo $style; ?> --bg-image: <?php echo $bgImage; ?>; --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>; ">
-                                    <div>
+                                    <div> 
                                         <?php
                                         if (get_sub_field('titulo')) {
                                             echo "<h2 class='mb-3 text-center'>" . get_sub_field('titulo') . "</h2>";
