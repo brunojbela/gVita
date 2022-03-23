@@ -7,7 +7,7 @@
         $banner = get_field('banner_imagem_mobile');
     }
     ?>
-    <section id="banner" style="background-image: url('<?php echo $banner; ?>'); --colorBanner: <?php echo get_field('cor_texto_banner'); ?>;">
+    <section id="banner" style="background-image: linear-gradient(90deg, var(--dColor), transparent), url('<?php echo $banner; ?>'); --colorBanner: <?php echo get_field('cor_texto_banner'); ?>;">
         <div class="container">
             <div class="row py-5">
                 <div class="col-12 col-md-6 p-md-0">
@@ -54,11 +54,22 @@
                         <?php
                         if (get_sub_field('coluna')) {
                             $count = count(get_sub_field('coluna'));
+                            $i = 1;
                             while (have_rows('coluna')) {
                                 the_row();
                                 $class = $count == 2 ? "col-md-6" : '';
+                                $bgImage = get_sub_field('background_Image');
+                                $style = "";
+                                if(!get_sub_field('titulo') && !get_sub_field('conteudo')){
+                                    $bgImage = "linear-gradient(-90deg, var(--bg-color), transparent), url('". get_sub_field('background_Image') ."')";
+                                    $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: right center;";
+                                    if($i == 2){
+                                        $bgImage = "linear-gradient(90deg, var(--bg-color), transparent), url('". get_sub_field('background_Image') ."')";
+                                        $style = "background-blend-mode: multiply; background-color: transparent; background-size: 50% 100%, cover; background-position: left center;";
+                                    }
+                                }
                         ?>
-                                <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="--bg-image: url(<?php echo get_sub_field('background_Image'); ?>); --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>; ">
+                                <div class="diferencial col-12 <?php echo $class; ?> p-md-5 p-4 justify-content-center d-flex align-items-center" style="<?php echo $style; ?> --bg-image: <?php echo $bgImage; ?>; --text-color: <?php echo get_sub_field('cor_texto'); ?>; --bg-color: <?php echo get_sub_field('background_cor'); ?>; ">
                                     <div>
                                         <?php
                                         if (get_sub_field('titulo')) {
@@ -73,6 +84,7 @@
                                     </div>
                                 </div>
                         <?php
+                        $i++;
                             }
                         }
                         ?>
