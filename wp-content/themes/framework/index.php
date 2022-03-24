@@ -105,7 +105,20 @@
                         <div class="content mb-3">
                             <?php echo get_field('conteudo_tour'); ?>
                         </div>
-                        <button class="mb-4" data-toggle="modal" data-target="#mytour" style="color: <?php echo get_field('buttom-color'); ?>; background: <?php echo get_field('buttom-bg'); ?>;">Faça um tour Virtual</button>
+                        <button class="mb-4" data-toggle="modal" data-target="#mytour" style="color: <?php echo get_field('buttom-color'); ?>; background: <?php echo get_field('buttom-bg'); ?>;">
+                        <?php 
+                            $cta = get_field('cta_tour_uni_1') ? get_field('cta_tour_uni_1') : 'Faça um tour Virtual';
+                            echo $cta;
+                         ?>
+                    </button>
+                    <?php if(get_field('link_tour_uni_2')){ ?>
+                        <button class="mb-4" data-toggle="modal" data-target="#mytour2" style="color: <?php echo get_field('buttom-color'); ?>; background: <?php echo get_field('buttom-bg'); ?>;">
+                        <?php 
+                            $cta = get_field('cta_tour_uni_2') ? get_field('cta_tour_uni_2') : 'Faça um tour Virtual';
+                            echo $cta;
+                         ?>
+                    </button>
+                    <?php } ?>
                         <figure>
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="128" height="78" viewBox="0 0 128 78">
                                 <defs>
@@ -187,6 +200,12 @@
     <div class="modal-dialog">
         <button type="button" class="close" data-dismiss="modal">x</button>
         <iframe src="<?php echo get_field('link_tour'); ?>" width="100%" height="100%" frameborder="0"></iframe>
+    </div>
+</div>
+<div id="mytour2" class="modal">
+    <div class="modal-dialog">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        <iframe src="<?php echo get_field('link_tour_uni_2'); ?>" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
 <?php get_footer(); ?>
