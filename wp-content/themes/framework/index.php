@@ -7,7 +7,7 @@
         $banner = get_field('banner_imagem_mobile');
     }
     ?>
-    <section id="banner" style="background-image: linear-gradient(90deg, var(--dColor), transparent), url('<?php echo $banner; ?>'); --colorBanner: <?php echo get_field('cor_texto_banner'); ?>;">
+    <section id="banner" style="background-image: linear-gradient(90deg, <?php echo get_field('default_text_color', 'option'); ?>65, transparent), url('<?php echo $banner; ?>'); --colorBanner: <?php echo get_field('cor_texto_banner'); ?>;">
         <div class="container">
             <div class="row py-5">
                 <div class="col-12 col-md-6 p-md-0">
