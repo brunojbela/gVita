@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 p-md-0">
-                    <h2 class="text-center mb-4" style="color: <?php echo get_field('cor_titulo_formulario') ?>">
+                    <h2 class="text-center mb-4" style="color: <?php echo get_field('cor_titulo_formulario') ?>; --color-mobile: <?php echo get_field('cor_titulo_formulario_mobile'); ?>">
                         <?php echo get_field('banner_titulo_formulario'); ?>
                     </h2>
                     <div class="formContato d-flex">
@@ -199,13 +199,25 @@
 <div id="mytour" class="modal">
     <div class="modal-dialog">
         <button type="button" class="close" data-dismiss="modal">x</button>
-        <iframe src="<?php echo get_field('link_tour'); ?>" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe data-src="<?php echo get_field('link_tour'); ?>" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
 <div id="mytour2" class="modal">
     <div class="modal-dialog">
         <button type="button" class="close" data-dismiss="modal">x</button>
-        <iframe src="<?php echo get_field('link_tour_uni_2'); ?>" width="100%" height="100%" frameborder="0"></iframe>
+        <iframe data-src="<?php echo get_field('link_tour_uni_2'); ?>" width="100%" height="100%" frameborder="0"></iframe>
     </div>
 </div>
+
+<script>
+	jQuery('#mytour').on('shown.bs.modal', function (e) {
+    var link = $('#mytour iframe').attr('data-src')
+  $(' #mytour iframe').attr('src', link)
+})
+
+jQuery('#mytour2').on('shown.bs.modal', function (e) {
+    var link = $('#mytour iframe').attr('data-src')
+  $(' #mytour2 iframe').attr('src', link)
+})
+</script>
 <?php get_footer(); ?>
