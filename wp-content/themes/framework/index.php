@@ -139,7 +139,7 @@
     <section class="volta" style="--elemento: url(<?php echo get_field('elemento_grafico')['url']; ?>); ">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6 py-4 pl-md-5 titulo" style="background-image: url('<?php echo get_field('imagem_volta'); ?>');">
+                <div class="col-12 col-md-6 py-3 pl-md-5 titulo" style="background-image: url('<?php echo get_field('imagem_volta'); ?>');">
                     <h2><?php echo get_field('titulo_volta'); ?></h2>
                 </div>
                 <div class="col-12 col-md-6 py-5 pt-md-5 pb-mb-4 pl-md-5" style="background-color: <?php echo get_field('color_bg_volta'); ?>; border-color: <?php echo get_field('color_borda'); ?>">
